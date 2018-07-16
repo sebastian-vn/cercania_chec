@@ -9,77 +9,145 @@
 
   <link rel="shortcut icon" href="img/logo-min.png" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="css/cercania_form.css">
 </head>
 
 <body>
 
   <div id="opaco">
-    <img id="cercania_logo" src="img/cercania-logo.PNG" height="90" alt="">
+
   </div>
 
-
+  <img id="cercania_logo" src="img/cercania-logo.PNG" height="170" alt="">
   <div id="container_form">
     <div id="titulo">
       <h2>Registro Ejecución de Cercania</h2>
     </div>
 
     <span>Ingrese la fecha de Ejecución</span>
-    <div class="input-field">
-      <input id="fecha" type="text" class="datepicker">
-      <label for="fecha">Ingrese la fecha</label>
-    </div>
+    <form id="form_cercania" action="#">
+      <div class="input-field">
+        <input id="fecha" type="text" class="datepicker">
+        <label for="fecha">Ingrese la fecha</label>
+      </div>
 
-    <div class="divider"></div>
+      <div class="divider"></div>
 
-    <span>Seleccione las competencias y los comportamientos aplicados</span>
-    <div id="normal_select" class="input-field col s12">
-      <select id="competencia" multiple>
-        <option value="" disabled>Selecciona un competencia y competencia</option>
-        <option value="1">Option 1</option>
-        <option value="2">Option 2</option>
-        <option value="3">Option 3</option>
-      </select>
-    </div>
+      <span>Seleccione las competencias y los comportamientos aplicados</span>
+      <div id="normal_select" class="input-field col s12">
+        <select id="competencia" multiple>
+          <option value="" disabled>Selecciona un competencia y competencia</option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3</option>
+        </select>
+      </div>
 
-    <div class="divider"></div>
+      <div class="divider"></div>
 
-    <span>Seleccione la estrategia, tactico y jornada</span>
-    <div id="etj" class="input-field col s12">
-      <select multiple>
-        <option value="" disabled>Estrategia</option>
-        <option value="1">Option 1</option>
-        <option value="2">Option 2</option>
-        <option value="3">Option 3</option>
-      </select>
+      <span>Seleccione la estrategia, tactico y jornada</span>
+      <div id="etj" class="input-field col s12">
+        <select id="estrategia" multiple>
+          <option value="" disabled>Estrategia</option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3</option>
+        </select>
 
-      <select multiple>
-        <option value="" disabled>Tactico</option>
-        <option value="1">Option 1</option>
-        <option value="2">Option 2</option>
-        <option value="3">Option 3</option>
-      </select>
+        <select id="tactico" multiple>
+          <option value="" disabled>Tactico</option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3</option>
+        </select>
 
-      <select multiple>
-        <option value="" disabled>Jornada</option>
-        <option value="1">Option 1</option>
-        <option value="2">Option 2</option>
-        <option value="3">Option 3</option>
-      </select>
-    </div>
+        <select id="jornada" multiple>
+          <option value="" disabled>Jornada</option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3</option>
+        </select>
+      </div>
 
-    <div class="divider"></div>
+      <div class="divider"></div>
 
-    <span>Seleccione el contenido</span>
-    <div class="input-field col s12">
-      <select id="competencia" multiple>
-        <option value="" disabled>Contenido</option>
-        <option value="1">Option 1</option>
-        <option value="2">Option 2</option>
-        <option value="3">Option 3</option>
-      </select>
-    </div>
+      <span>Seleccione el contenido</span>
+      <div class="input-field col s12">
+        <select id="contenido" multiple>
+          <option value="" disabled>Contenido</option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3</option>
+        </select>
+      </div>
+
+      <div class="divider"></div>
+
+      <span>Seleccione el municipio</span>
+      <div class="input-field col s12">
+        <select id="municipio" multiple>
+          <option value="" disabled>Contenido</option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3</option>
+        </select>
+        <div id="radio">
+          <p>
+            <label>
+              <input id="urbano" name="municipio" type="radio" checked />
+              <span>Urbano</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input id="rural" name="municipio" type="radio" />
+              <span>Rural</span>
+            </label>
+          </p>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <span>Observaciones</span>
+      <div class="input-field col s12">
+        <i class="material-icons prefix">mode_edit</i>
+        <textarea id="observaciones" class="materialize-textarea"></textarea>
+        <label for="observaciones">Observaciones</label>
+      </div>
+
+      <div class="divider"></div>
+
+      <span>Seleccione los gestores que participaron</span>
+      <div id="normal_select" class="input-field col s12">
+        <select id="gestor" multiple>
+          <option value="" disabled>Seleccione los gestores</option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3</option>
+        </select>
+      </div>
+
+      <div class="divider"></div>
+
+      <span>Evidencias</span>
+      <div class="file-field input-field">
+        <div class="btn">
+          <span>Cargar</span>
+          <input type="file" multiple>
+        </div>
+        <div class="file-path-wrapper">
+          <input class="file-path validate" type="text" placeholder="Ingrese uno o mas archivos">
+        </div>
+      </div>
+    </form>
+
   </div>
+
+  <button class="btn waves-effect waves-light" type="submit" name="action">Guardar
+    <i class="material-icons right">send</i>
+  </button>
 
 
 

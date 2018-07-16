@@ -46,7 +46,6 @@ a {
 }
 
 #cercania_logo {
-  height: 10em;
   margin-bottom: 2em;
   margin-top: 2em;
 }
@@ -64,6 +63,7 @@ a {
   box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.75);
   border-radius: 2px;
   z-index: 100;
+  padding-bottom: 2em;
 }
 
 /* main {
@@ -96,6 +96,7 @@ input.datepicker {
 
 span {
   font-family: checFont1 !important;
+  font-size: 1.8em;
 }
 
 #etj {
@@ -103,13 +104,42 @@ span {
   flex-direction: row;
 }
 
+.select-wrapper {
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 5px 0px;
+  padding: 12px;
+  border-radius: 3px;
+}
+
+
 #titulo {
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(35, 146, 25, 0.3);
   width: 100%;
   margin-bottom: 2em;
 }
 
 .divider {
   margin-bottom: 3em;
+}
+
+#form_cercania {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#radio {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+div.btn{
+  background-color: #92c849;
+}
+
+.btn.waves-effect{
+  margin-top: 3em;
+  background-color: rgba(0, 0, 0, 0.3);
+  height: 5em;
+  width: 10em;
 }

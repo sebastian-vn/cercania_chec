@@ -1,5 +1,59 @@
 $(document).ready(function() {
-  $(".datepicker").datepicker();
+  $(".datepicker").datepicker({
+    format: "dd-mm-yyyy",
+    i18n: {
+      months: [
+        "Enero",
+        "Febrero",
+        "Marzo",
+        "Abril",
+        "Mayo",
+        "Junio",
+        "Julio",
+        "Agosto",
+        "Septiembre",
+        "Octubre",
+        "Noviembre",
+        "Diciembre"
+      ],
+      monthsShort: [
+        "Ene",
+        "Feb",
+        "Mar",
+        "Abr",
+        "May",
+        "Jun",
+        "Jul",
+        "Ago",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dic"
+      ],
+      weekdays: [
+        "Domingo",
+        "Lunes",
+        "Martes",
+        "Miercoles",
+        "Jueves",
+        "Viernes",
+        "Sabado"
+      ],
+      weekdaysShort: [
+        "Dom",
+        "Lun",
+        "Mar",
+        "Mie",
+        "Jue",
+        "Vie",
+        "Sab"
+      ],
+
+      cancel: "Cancelar",
+      clear: "Despejar",
+      done: "Listo"
+    }
+  });
   $("select").formSelect();
   getOpacoHeight();
   getSelectWidth();
@@ -10,14 +64,16 @@ $(document).ready(function() {
 
 function getSelectWidth() {
   $(".select-wrapper").css("width", $("#container_form").width() / 2);
+  $(".materialize-textarea").css("width", $("#container_form").width() / 2);
+  $(".file-path.validate").css("width", $("#container_form").width() / 2);
 }
 
-function getdividerWidth(){
+function getdividerWidth() {
   $(".divider").css("width", $("#container_form").width() - 300);
 }
 
 function getOpacoHeight() {
-  $("#opaco").css("height", $("body").height() / 2);
+  $("#opaco").css("height", screen.height / 2);
 }
 
 function getDateWidth() {
@@ -35,4 +91,3 @@ function selectWidth() {
     x[i].style.padding = "7px";
   }
 }
-
