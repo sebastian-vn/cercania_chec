@@ -39,15 +39,7 @@ $(document).ready(function() {
         "Viernes",
         "Sabado"
       ],
-      weekdaysShort: [
-        "Dom",
-        "Lun",
-        "Mar",
-        "Mie",
-        "Jue",
-        "Vie",
-        "Sab"
-      ],
+      weekdaysShort: ["Dom", "Lun", "Mar", "Mie", "Jue", "Vie", "Sab"],
 
       cancel: "Cancelar",
       clear: "Despejar",
@@ -60,6 +52,13 @@ $(document).ready(function() {
   getDateWidth();
   selectWidth();
   getdividerWidth();
+
+  // End of document.ready
+});
+
+// Clicks
+$("#guardar").click(function() {
+  verificarCampos();
 });
 
 function getSelectWidth() {
@@ -90,4 +89,55 @@ function selectWidth() {
     x[i].style.boxShadow = "0px 0px 5px 0px rgba(0,0,0,0.3)";
     x[i].style.padding = "7px";
   }
+  $("#fecha")
+    .parent()
+    .css("box-shadow", "rgba(0, 0, 0, 0.3) 0px 0px 5px 0px");
+  $("#fecha")
+    .parent()
+    .css("padding", "13px 7px 0px 7px");
+  $("#lfecha").css("padding", "20px 0px 20px 7px");
+}
+
+// Si los campos estan completos convertira el cuadro de los elementos incompletos en rojo
+function verificarCampos() {
+  var value = true;
+  $.each($(".obligatorio"), function() {
+    errores = [];
+    if ($(this).val() == "") {
+      console.log($(this));
+      swal({
+        title: "Incompleto",
+        text: "Te falta comepletar campos",
+        icon: "error"
+      });
+      $(this).parent().addClass("animated bounce");
+      $(this).parent().css("box-shadow", "rgba(255, 0, 0, 1) 0px 0px 5px 0px");
+      $(this).parent().removeClass("animated bounce");
+      value = false;
+
+      // Si alguno de los elementos incompletos elige una opción, esto volvera el cuadro normal
+      $.each($(".obligatorio"), function() {
+        $(this).change(function() {
+          $(this)
+            .parent()
+            .css("box-shadow", "");
+        });
+      });
+    }
+  });
+
+  if (value) {
+    guardarCercania();
+  }
+}
+
+function getCompetenciasAndComportamientos() {
+  var url = "php/cercania_form.php";
+  $.post(url, { accion: "getCompetenciasAndComportamientos" }, function(data) {
+    $("#competencia").append('<option value="" ></option>');
+  });
+}
+
+function guardarCercania() {
+  console.log("...Verificando...");
 }

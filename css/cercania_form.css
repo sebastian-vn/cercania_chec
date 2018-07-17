@@ -66,12 +66,6 @@ a {
   padding-bottom: 2em;
 }
 
-/* main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
-
 h2 {
   font-family: checFont1;
 }
@@ -134,6 +128,10 @@ span {
 }
 
 div.btn{
+  background-color: #92c849;
+}
+
+div.btn:hover{
   background-color: #92c849;
 }
 
