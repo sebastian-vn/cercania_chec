@@ -37,7 +37,7 @@
     <span>Seleccione las competencias y los comportamientos aplicados</span>
     <div id="normal_select" class="input-field col s12">
       <select id="competencia" multiple class="obligatorio">
-        <option value="" disabled>Selecciona un competencia y competencia</option>
+        <option value="" disabled>Competencia y Comportamiento</option>
       </select>
     </div>
 
@@ -47,23 +47,17 @@
     <div id="etj" class="input-field col s12">
       <select id="estrategia" multiple class="obligatorio">
         <option value="" disabled>Estrategia</option>
-        <option value="1">Option 1</option>
-        <option value="2">Option 2</option>
-        <option value="3">Option 3</option>
       </select>
 
       <select id="tactico" multiple class="obligatorio">
         <option value="" disabled>Tactico</option>
-        <option value="1">Option 1</option>
-        <option value="2">Option 2</option>
-        <option value="3">Option 3</option>
       </select>
 
-      <select id="jornada" multiple class="obligatorio">
-        <option value="" disabled>Jornada</option>
-        <option value="1">Option 1</option>
-        <option value="2">Option 2</option>
-        <option value="3">Option 3</option>
+      <select id="jornada" class="obligatorio">
+        <option value="" disabled selected>Jornada</option>
+        <option value="1">Mañana</option>
+        <option value="2">Tarde</option>
+        <option value="3">Todo el Día</option>
       </select>
     </div>
 
@@ -73,9 +67,6 @@
     <div class="input-field col s12">
       <select id="contenido" multiple class="obligatorio">
         <option value="" disabled>Contenido</option>
-        <option value="1">Option 1</option>
-        <option value="2">Option 2</option>
-        <option value="3">Option 3</option>
       </select>
     </div>
 
@@ -85,9 +76,6 @@
     <div class="input-field col s12">
       <select id="municipio" multiple class="obligatorio">
         <option value="" disabled>Municipio</option>
-        <option value="1">Option 1</option>
-        <option value="2">Option 2</option>
-        <option value="3">Option 3</option>
       </select>
       <div id="radio">
         <p>
@@ -120,9 +108,6 @@
     <div id="normal_select" class="input-field col s12">
       <select id="gestor" multiple>
         <option value="" disabled>Seleccione los gestores</option>
-        <option value="1">Option 1</option>
-        <option value="2">Option 2</option>
-        <option value="3">Option 3</option>
       </select>
     </div>
 
@@ -135,7 +120,7 @@
         <input type="file" multiple>
       </div>
       <div class="file-path-wrapper">
-        <input id="evidencias"  class="file-path validate" type="text" placeholder="Ingrese uno o mas archivos">
+        <input id="evidencias" class="file-path validate" type="text" placeholder="Ingrese uno o mas archivos">
       </div>
     </div>
 
