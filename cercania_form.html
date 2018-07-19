@@ -16,6 +16,11 @@
 
 <body>
 
+  <div class="spinner animated fadeOut" style="display: none;">
+    <div class="cube1"></div>
+    <div class="cube2"></div>
+  </div>
+
   <div id="opaco">
 
   </div>
@@ -36,7 +41,7 @@
 
     <span>Seleccione las competencias y los comportamientos aplicados</span>
     <div id="normal_select" class="input-field col s12">
-      <select id="competencia" multiple class="obligatorio">
+      <select id="competencia" multiple class="obligatorio selects">
         <option value="" disabled>Competencia y Comportamiento</option>
       </select>
     </div>
@@ -45,15 +50,15 @@
 
     <span>Seleccione la estrategia, tactico y jornada</span>
     <div id="etj" class="input-field col s12">
-      <select id="estrategia" multiple class="obligatorio">
+      <select id="estrategia" multiple class="obligatorio selects">
         <option value="" disabled>Estrategia</option>
       </select>
 
-      <select id="tactico" multiple class="obligatorio">
+      <select id="tactico" multiple class="obligatorio selects">
         <option value="" disabled>Tactico</option>
       </select>
 
-      <select id="jornada" class="obligatorio">
+      <select id="jornada" class="obligatorio selects">
         <option value="" disabled selected>Jornada</option>
         <option value="1">Mañana</option>
         <option value="2">Tarde</option>
@@ -63,9 +68,9 @@
 
     <div class="divider"></div>
 
-    <span>Seleccione el contenido</span>
+    <span>Seleccione el contenido temático</span>
     <div class="input-field col s12">
-      <select id="contenido" multiple class="obligatorio">
+      <select id="contenido" multiple class="obligatorio selects">
         <option value="" disabled>Contenido</option>
       </select>
     </div>
@@ -74,7 +79,7 @@
 
     <span>Seleccione el municipio</span>
     <div class="input-field col s12">
-      <select id="municipio" multiple class="obligatorio">
+      <select id="municipio" class="obligatorio selects">
         <option value="" disabled>Municipio</option>
       </select>
       <div id="radio">
@@ -106,7 +111,7 @@
 
     <span>Seleccione los gestores que participaron</span>
     <div id="normal_select" class="input-field col s12">
-      <select id="gestor" multiple>
+      <select id="gestor" multiple class="selects">
         <option value="" disabled>Seleccione los gestores</option>
       </select>
     </div>
@@ -129,6 +134,8 @@
   <button id="guardar" class="btn waves-effect waves-light" type="submit" name="action">Guardar
     <i class="material-icons right">send</i>
   </button>
+
+
 
 
 

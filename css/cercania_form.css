@@ -104,7 +104,6 @@ span {
   border-radius: 3px;
 }
 
-
 #titulo {
   text-align: center;
   background-color: rgba(35, 146, 25, 0.3);
@@ -127,17 +126,87 @@ span {
   justify-content: space-evenly;
 }
 
-div.btn{
+div.btn {
   background-color: #92c849;
 }
 
-div.btn:hover{
+div.btn:hover {
   background-color: #92c849;
 }
 
-.btn.waves-effect{
+.btn.waves-effect {
   margin-top: 3em;
   background-color: rgba(0, 0, 0, 0.3);
   height: 5em;
   width: 10em;
+}
+
+/* Loader */
+
+.spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #92c849;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 300;
+}
+
+.cube1,
+.cube2 {
+  background-color: #333;
+  width: 15px;
+  height: 15px;
+  top: 0;
+  left: 0;
+
+  -webkit-animation: sk-cubemove 1.8s infinite ease-in-out;
+  animation: sk-cubemove 1.8s infinite ease-in-out;
+}
+
+.cube2 {
+  -webkit-animation-delay: -0.9s;
+  animation-delay: -0.9s;
+}
+
+@-webkit-keyframes sk-cubemove {
+  25% {
+    -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5);
+  }
+  50% {
+    -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg);
+  }
+  75% {
+    -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg)
+      scale(0.5);
+  }
+  100% {
+    -webkit-transform: rotate(-360deg);
+  }
+}
+
+@keyframes sk-cubemove {
+  25% {
+    transform: translateX(42px) rotate(-90deg) scale(0.5);
+    -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5);
+  }
+  50% {
+    transform: translateX(42px) translateY(42px) rotate(-179deg);
+    -webkit-transform: translateX(42px) translateY(42px) rotate(-179deg);
+  }
+  50.1% {
+    transform: translateX(42px) translateY(42px) rotate(-180deg);
+    -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg);
+  }
+  75% {
+    transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
+    -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg)
+      scale(0.5);
+  }
+  100% {
+    transform: rotate(-360deg);
+    -webkit-transform: rotate(-360deg);
+  }
 }

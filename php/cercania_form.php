@@ -18,6 +18,10 @@
     if($_POST["accion"] == "getEstrategias"){
       getEstrategias();
     }
+
+    if($_POST["accion"] == "getTemas"){
+      getTemas();
+    }
   }
 
   function getCompetenciasAndComportamientos(){
@@ -100,6 +104,26 @@
         print_r($conexion->errorInfo());
         $data['mensaje'] = "No se realizo la consulta";
         $data['error'] = 1;
+      }
+    }
+    echo json_encode($data);
+  }
+
+  function getTemas(){
+    include "conexion.php";
+
+    $data = array("mensaje" => "", "error" => 0, "html" => "");
+
+    $sql = "SELECT id_temas, temas 
+    FROM temas";
+
+    if($rs = $con->query($sql)){
+      if($filas = $rs->fetchAll(PDO::FETCH_ASSOC)){
+        $data['html'] = $filas;
+      }else{
+        print_r($conexion->errorInfo());
+        $data['mensaje'] = "No se realizo la consulta";
+        $data['error'] = 1;   
       }
     }
     echo json_encode($data);

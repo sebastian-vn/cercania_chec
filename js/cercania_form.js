@@ -1,4 +1,9 @@
 $(document).ready(function() {
+  // Inicio de opciones
+  $("select").formSelect();
+  getDatosSelect();
+  acomodarTodo();
+
   $(".datepicker").datepicker({
     format: "dd-mm-yyyy",
     i18n: {
@@ -48,23 +53,17 @@ $(document).ready(function() {
   });
 
   //Inicializacion de los select materialize
-  $("select").formSelect();
+
 }); // End of document.ready
-
-
 
 // Clicks
 $("#guardar").click(function() {
-  verificarCampos();
+  guardarCercania();
 });
 
 //Funcion que realiza la peticion de los datos a llenar en los select del formulario
-function getDatosSelect(callback) {
-  getCompetenciasAndComportamientos();
-  getMunicipio();
-  getGestores();
-  getEstrategias();
-  callback();
+function getDatosSelect() {
+  getCompetenciasAndComportamientos(getGestores);
 }
 
 // Funcion que contiene las funciones de acomodar el div, para ejecutar en el momento que se reinicien los selects del form
@@ -153,7 +152,7 @@ function verificarCampos() {
 }
 
 //Funciones que trae los datos de cada uno de los selects
-function getCompetenciasAndComportamientos() {
+function getCompetenciasAndComportamientos(callback) {
   var url = "php/cercania_form.php";
   $.post(
     url,
@@ -175,6 +174,7 @@ function getCompetenciasAndComportamientos() {
     },
     "json"
   );
+  callback();
 }
 
 function getGestores() {
@@ -196,14 +196,14 @@ function getGestores() {
             "</option>"
         );
       }
-      //se reincia el select para que los datos retornados del php puedan aparecer
       $("#gestor").formSelect();
     },
     "json"
   );
+  getMunicipio(getEstrategias);
 }
 
-function getMunicipio() {
+function getMunicipio(callback) {
   var url = "php/cercania_form.php";
   $.post(
     url,
@@ -223,6 +223,7 @@ function getMunicipio() {
     },
     "json"
   );
+  callback();
 }
 
 function getEstrategias() {
@@ -241,7 +242,30 @@ function getEstrategias() {
             "</option>"
         );
       }
-      $("#estrategia").formSelect();
+      $('#estrategia').formSelect();
+      getTemas();
+    },
+    "json"
+  );
+}
+
+function getTemas(){
+  var url = "php/cercania_form.php";
+  $.post(
+    url,
+    { accion: "getTemas" },
+    function(data) {
+      i = 0;
+      for (i; i < data.html.length; i++) {
+        $("#contenido").append(
+          '<option value="' +
+            data.html[i].id_temas +
+            '">' +
+            data.html[i].temas +
+            "</option>"
+        );
+      }
+      $('#contenido').formSelect();
       acomodarTodo();
     },
     "json"
@@ -249,5 +273,7 @@ function getEstrategias() {
 }
 
 function guardarCercania() {
-  console.log("...Verificando...");
+  if(verificarCampos()){
+    console.log("Todo verificado");
+  }
 }
