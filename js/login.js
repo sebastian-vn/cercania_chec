@@ -8,7 +8,7 @@ $("#enviar").click(function(){
 
 $.each($("input"), function(){
   $(this).keypress(function(){
-    $(this).css("border-bottom-color", "rgba(0,0,0,.12)");
+    $(this).removeClass("validation");
   });
 });
 
@@ -22,7 +22,7 @@ function verificarCampos(){
         text: "Te falta comepletar campos",
         icon: "error",
       });
-      $(this).css("border-bottom-color", "red");
+      $(this).addClass("validation");
       value = false;
     }
   });

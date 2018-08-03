@@ -131,3 +131,7 @@ a{
 .closebtn:hover {
   color: black;
 }
+
+.validation{
+  border-bottom-color: red;
+}
